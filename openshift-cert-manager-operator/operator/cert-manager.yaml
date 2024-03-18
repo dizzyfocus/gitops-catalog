@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: 'https://github.com/dizzyfocus/gitops-catalog'
         targetRevision: HEAD
-        path: 'openshift-cert-manager-operator/operator/overlays'
+        path: 'openshift-cert-manager-operator/operator/overlays/stable-v1.10'
       destination:
         server: '{{server}}'
         namespace: openshift-cert-manager-operator
