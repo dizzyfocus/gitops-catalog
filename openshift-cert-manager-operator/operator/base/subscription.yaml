@@ -9,8 +9,3 @@ spec:
   name: openshift-cert-manager-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  placement:
-    placementRef:
-      name: prod-clusters
-      kind: PlacementRule
-      apiGroup: apps.open-cluster-management.io
