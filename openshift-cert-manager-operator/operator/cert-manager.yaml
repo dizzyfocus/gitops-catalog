@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cert-manager-operator-set
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            environment: prod
+  template:
+    metadata:
+      name: '{{name}}-cert-manager-operator'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://github.com/dizzyfocus/gitops-catalog'
+        targetRevision: HEAD
+        path: 'openshift-cert-manager-operator/operator/overlays'
+      destination:
+        server: '{{server}}'
+        namespace: openshift-cert-manager-operator
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          selfHeal: true
+          prune: true
