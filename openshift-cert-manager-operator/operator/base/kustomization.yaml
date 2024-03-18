@@ -5,4 +5,5 @@ resources:
   - namespace.yaml
   - operator-group.yaml
   - subscription.yaml
+  - channel.yaml
   - placement.yaml
