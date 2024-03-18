@@ -1,0 +1,8 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: cert-manager-channel
+  namespace: openshift-cert-manager-operator
+spec:
+  type: Git
+  pathname: "https://github.com/dizzyfocus/gitops-catalog/openshift-cert-manager-operator/operator/overlays/stable-v1.10"
