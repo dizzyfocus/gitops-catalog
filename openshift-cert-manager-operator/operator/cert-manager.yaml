@@ -8,7 +8,7 @@ spec:
     - clusters:
         selector:
           matchLabels:
-            environment: prod
+            cluster.open-cluster-management.io/clusterset: managed
   template:
     metadata:
       name: '{{name}}-cert-manager-operator'
